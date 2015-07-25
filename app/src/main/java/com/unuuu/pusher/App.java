@@ -13,7 +13,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        Parse.initialize(this, APPLICATION_ID, CLIENT_KEY);
+        Parse.initialize(this, getString(R.string.parse_application_id), getString(R.string.parse_client_key));
         ParseInstallation.getCurrentInstallation().saveInBackground();
     }
 }

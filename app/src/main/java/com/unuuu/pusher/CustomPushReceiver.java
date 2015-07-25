@@ -16,7 +16,10 @@ import org.json.JSONObject;
  */
 public class CustomPushReceiver extends ParsePushBroadcastReceiver {
 
+    @Override
     protected void onPushOpen(Context context, Intent intent) {
+        super.onPushOpen(context, intent);
+
         Log.d("CustomPushReceiver", "onPushOpen");
 
         Bundle bundle = intent.getExtras();
@@ -29,7 +32,10 @@ public class CustomPushReceiver extends ParsePushBroadcastReceiver {
         context.startActivity(i);
     }
 
+    @Override
     protected void onPushReceive(Context context, Intent intent) {
+        super.onPushReceive(context, intent);
+
         String message = "";
         try {
             JSONObject pushData = new JSONObject(intent.getStringExtra("com.parse.Data"));
